@@ -4,7 +4,7 @@ include $(CLEAR_VARS)
 IWL_ANDROID_SRC_BASE := $(LOCAL_PATH)
 IWL_ANDROID_ROOT := $(CURDIR)
 IWL_LINUXPATH = $(IWL_ANDROID_ROOT)/kernel_imx
-IWL_CROSS_COMPILE = $(IWL_ANDROID_ROOT)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-
+IWL_CROSS_COMPILE = $(IWL_ANDROID_ROOT)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-
 
 mod_cleanup := $(IWL_ANDROID_ROOT)/$(IWL_ANDROID_SRC_BASE)/dummy
 
