@@ -14,14 +14,14 @@ $(mod_cleanup) :
 
 iwlwifi_module_file := drivers/net/wireless/iwlwifi/iwlwifi.ko
 $(IWL_ANDROID_SRC_BASE)/$(iwlwifi_module_file):$(mod_cleanup) $(TARGET_PREBUILT_KERNEL)
-	$(MAKE) -C $(IWL_ANDROID_SRC_BASE) O=$(IWL_LINUXPATH) ARCH=arm CROSS_COMPILE=$(IWL_CROSS_COMPILE) KLIB=$(IWL_LINUXPATH) KLIB_BUILD=$(IWL_LINUXPATH) COMPAT_CURDIR=$(IWL_ANDROID_ROOT)/$(IWL_ANDROID_SRC_BASE) defconfig-ath9k_iwlwifi_bt
+	$(MAKE) -C $(IWL_ANDROID_SRC_BASE) O=$(IWL_LINUXPATH) ARCH=arm CROSS_COMPILE=$(IWL_CROSS_COMPILE) KLIB=$(IWL_LINUXPATH) KLIB_BUILD=$(IWL_LINUXPATH) COMPAT_CURDIR=$(IWL_ANDROID_ROOT)/$(IWL_ANDROID_SRC_BASE) defconfig-ar6mx
 	$(MAKE) -C $(IWL_ANDROID_SRC_BASE) O=$(IWL_LINUXPATH) ARCH=arm CROSS_COMPILE=$(IWL_CROSS_COMPILE) KLIB=$(IWL_LINUXPATH) KLIB_BUILD=$(IWL_LINUXPATH) COMPAT_CURDIR=$(IWL_ANDROID_ROOT)/$(IWL_ANDROID_SRC_BASE) -j4 modules
 	find $(IWL_ANDROID_ROOT)/$(IWL_ANDROID_SRC_BASE) -name "*.ko" | xargs -i cp {} $(TARGET_OUT)/lib/modules
 
 
 autocompiledriver:
 	@echo compile drivers
-	@make ARCH=arm CROSS_COMPILE=../prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi- KLIB_BUILD=../kernel_imx
+	@make ARCH=arm CROSS_COMPILE=../prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi- KLIB_BUILD=../kernel_imx
 	@echo copying driver files to destination folder
 	@find . | grep ko$ | xargs -i cp {} $(TARGET_OUT)/lib/modules/
 
