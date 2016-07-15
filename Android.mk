@@ -26,7 +26,7 @@ autocompiledriver:
 	@find . | grep ko$ | xargs -i cp {} $(TARGET_OUT)/lib/modules/
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := iwlwifi.ko
+LOCAL_MODULE := OLD_VERSION_318_iwlwifi.ko
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT)/lib/modules
